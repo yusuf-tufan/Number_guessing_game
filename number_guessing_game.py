@@ -7,7 +7,7 @@ window.minsize(700,700)
 window.config(pady=50)
 
 list_num=[]
-
+right_guess=5
 def range_num():
 
     try:
@@ -23,6 +23,8 @@ def range_num():
 
 
 def guess_num():
+    global right_guess
+
     try:
         user_input=int(enter_num.get())
         if user_input == list_num[0]:
@@ -35,7 +37,11 @@ def guess_num():
         error_lbl=Label(text='Just enter a number!', width=20, height=6, bg='light green', fg='black',font=('Arial', 10, 'bold'))
         error_lbl.place(x=260, y=240)
 
-
+    right_guess =right_guess-1
+    if right_guess==0:
+        lbl_end=Label(text=f'Your rights are over\nNumber was {list_num[0]}\nShuffle the numbers\nto play again.', width=20, height=6, bg='light green', fg='black',font=('Arial', 10, 'bold'))
+        lbl_end.place(x=260, y=240)
+        list_num.clear()
 #lbl enter (0,input)
 lbl_numberrange=Label(text='Guess between 0 and the number you write.',font=('Arial',15,'bold'))
 lbl_numberrange.place(x=140,y=0)
