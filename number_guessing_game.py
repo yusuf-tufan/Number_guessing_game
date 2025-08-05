@@ -37,16 +37,17 @@ def guess_num():
         error_lbl=Label(text='Just enter a number!', width=20, height=6, bg='light green', fg='black',font=('Arial', 10, 'bold'))
         error_lbl.place(x=260, y=240)
 
-    right_guess =right_guess-1
+
     if right_guess==0:
         lbl_end=Label(text=f'Your rights are over\nNumber was {list_num[0]}\nShuffle the numbers\nto play again.', width=20, height=6, bg='light green', fg='black',font=('Arial', 10, 'bold'))
         lbl_end.place(x=260, y=240)
         list_num.clear()
+    right_guess = right_guess - 1
 #lbl enter (0,input)
 lbl_numberrange=Label(text='Guess between 0 and the number you write.',font=('Arial',15,'bold'))
 lbl_numberrange.place(x=140,y=0)
 #enter range
-enter_range=Entry(width=10,bg='orange',fg='black',font=('Arial',15,'bold'))
+enter_range=Entry(width=10,bg='white',fg='black',font=('Arial',15,'bold'))
 enter_range.place(x=260,y=35)
 
 #button range
@@ -58,7 +59,7 @@ range_button.place(x=260,y=75)
 lbl_enter=Label(text='Enter Your Guess',font=('Arial',15,'bold'))
 lbl_enter.place(x=230,y=125)
 #enter num
-enter_num=Entry(width=10,bg='orange',fg='black',font=('Arial',15,'bold'))
+enter_num=Entry(width=10,bg='white',fg='black',font=('Arial',15,'bold'))
 enter_num.place(x=260,y=150)
 #button guess
 guess_button=Button(text='Guess',width=15,bg='light blue',command=guess_num)
